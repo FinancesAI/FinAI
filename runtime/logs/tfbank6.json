@@ -1,0 +1,148 @@
+Loan exists. Name: Dana Proņičeva , ID: 211 Eur, form_post_id: 1752 uniqueId: 132 
+Person exists. Name: werwe werwerwe, ID: 4330 Eur, form_post_id: 1752  
+{"status":true,"save":true}\r\nArray
+(
+    [Request] => Array
+        (
+            [Customer] => Array
+                (
+                    [Addresses] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [City] => 
+                                    [Street] => Riga
+                                    [Region] => Array
+                                        (
+                                            [Country] => LVA
+                                        )
+
+                                )
+
+                        )
+
+                    [Contacts] => Array
+                        (
+                            [CellPhone] => +37125750174
+                            [Email] => martins.pakers2015@gmail.com
+                        )
+
+                    [Identification] => Array
+                        (
+                        )
+
+                    [Employment] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [Income] => 15000
+                                    [EmployerName] => SIA EMIMAR
+                                    [OccupationType] => Unknown
+                                )
+
+                        )
+
+                    [PersonalInfo] => Array
+                        (
+                            [FirstName] => Martins
+                            [LastName] => 
+                            [Gender] => 
+                            [MaritalStatus] => 
+                            [Ssn] => 291199-12058
+                        )
+
+                    [CountryOfResidence] => LVA
+                    [KnowYourCustomer] => Array
+                        (
+                            [PoliticallyExposedPerson] => 
+                            [BeneficialOwner] => 1
+                            [Citizenship] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [Purpose] => Array
+                (
+                    [0] => Array
+                        (
+                            [MetaData] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [Key] => LenderName
+                                            [Value] => Aizdevēja nosaukums SIA
+                                            [Type] => string
+                                        )
+
+                                )
+
+                            [Cost] => 1000
+                        )
+
+                )
+
+            [ApplicationInfo] => Array
+                (
+                    [RepaymentPeriod] => 48
+                    [Product] => LvaCashLoan
+                    [PurposeOfLoan] => Consumption
+                )
+
+            [ExternalPartner] => LTeam
+            [BankInfo] => Array
+                (
+                    [Iban] => LV66BANK0000000000000
+                )
+
+        )
+
+    [Response] => Array
+        (
+            [ApplicationId] => 50336880
+            [ApplicationNumber] => 50336880
+            [ApprovedAmount] => 0
+            [InvalidReason] => 
+            [ApprovedRepaymentPeriod] => 0
+            [Decision] => Rejected
+            [InsuranceCost] => 0
+            [InterestRate] => 0
+            [IsPpiMandatory] => 
+            [IsPreapproved] => 
+            [IsTopUp] => 
+            [MonthlyCost] => 0
+            [MonthlyFee] => 0
+            [RegisteredAddressApplicant] => Array
+                (
+                    [City] => 
+                    [FirstName] => MARTINS
+                    [LastName] => 
+                    [Street] => RIGA
+                    [Zip] => RIGA
+                )
+
+            [RegisteredAddressCoapplicant] => 
+            [StartFee] => 0
+            [TopUp] => Array
+                (
+                    [Number] => 
+                    [Balance] => 0
+                )
+
+            [EsigningApplicantUrl] => 
+            [EsigningCoapplicantUrl] => 
+            [RejectionReason] => Array
+                (
+                    [Code] => REJ-25
+                    [Message] => Age < 22
+                )
+
+            [EffectiveInterestRate] => 0
+            [VeriffIdentificationUrl] => 
+            [Errors] => 
+        )
+
+)
+---$status---: 2Ok

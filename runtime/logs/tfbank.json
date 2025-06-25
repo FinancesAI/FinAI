@@ -1,0 +1,47 @@
+Loan exists. Name: Dana Proņičeva , ID: 211 Eur, form_post_id: 1752 uniqueId: 132 
+Person exists. Name: werwe werwerwe, ID: 4330 Eur, form_post_id: 1752  
+{"status":true,"save":true}\r\nArray
+(
+    [ApplicationId] => 50336807
+    [ApplicationNumber] => 50336807
+    [ApprovedAmount] => 0
+    [InvalidReason] => 
+    [ApprovedRepaymentPeriod] => 0
+    [Decision] => Rejected
+    [InsuranceCost] => 0
+    [InterestRate] => 0
+    [IsPpiMandatory] => 
+    [IsPreapproved] => 
+    [IsTopUp] => 
+    [MonthlyCost] => 0
+    [MonthlyFee] => 0
+    [RegisteredAddressApplicant] => Array
+        (
+            [City] => 
+            [FirstName] => MARTINS
+            [LastName] => 
+            [Street] => RIGA
+            [Zip] => RIGA
+        )
+
+    [RegisteredAddressCoapplicant] => 
+    [StartFee] => 0
+    [TopUp] => Array
+        (
+            [Number] => 
+            [Balance] => 0
+        )
+
+    [EsigningApplicantUrl] => 
+    [EsigningCoapplicantUrl] => 
+    [RejectionReason] => Array
+        (
+            [Code] => REJ-25
+            [Message] => Age < 22
+        )
+
+    [EffectiveInterestRate] => 0
+    [VeriffIdentificationUrl] => 
+    [Errors] => 
+)
+---$status---: 2Not ok

@@ -1,0 +1,1 @@
+{"template":"default","enableI18N":"0","messageCategory":"app","ns":"app\\models\\wordpress_link","db":"wordpressLinkDb","baseClass":"yii\\db\\ActiveRecord","generateRelations":"all","generateJunctionRelationMode":"table","generateLabelsFromComments":"1","queryNs":"app\\models\\wordpress_link","queryBaseClass":"yii\\db\\ActiveQuery","useTablePrefix":"0","generateQuery":"0"}

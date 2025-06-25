@@ -1,0 +1,14 @@
+{
+  "name": "broker-finlat/calc",
+  "type": "yii2-module",
+  "description": "Calc Max Credit",
+  "keywords": [
+    "yii2",
+    "calculator",
+    "module"
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "yiisoft/yii2-jui": "~2.0.0"
+  }
+}

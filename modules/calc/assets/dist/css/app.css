@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.cmc, .cmc *, .cmc :before, .cmc :after,
+.cmc-page, .cmc-page *, .cmc-page :before, .cmc-page :after {
+  box-sizing: border-box;
+}
+
+.cmc-page {
+  font-family: Arial, sans-serif;
+  background-image: url(../images/bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.cmc-page__container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 220px 10px 10px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.cmc-page__logo {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cmc-page__title {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #384D8E;
+}
+
+.cmc-page__calc-title-bg {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  width: 320px;
+  height: 50px;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+}
+.cmc-page__calc-title-bg:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: inherit;
+  height: inherit;
+  background: #384D8E;
+}
+.cmc-page__calc-title-bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  background: #5B73B6;
+}
+
+.cmc-page__calc-title {
+  position: absolute;
+  top: 122px;
+  right: 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+  .cmc-page__container {
+    padding-top: 300px;
+  }
+  .cmc-page__logo {
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cmc-page__title {
+    top: 140px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .cmc-page__calc-title-bg {
+    top: 210px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cmc-page__calc-title {
+    top: 225px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+.cmc .cmc-input {
+  padding: 0 60px 0 18px !important;
+  width: 100% !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  border: 1px solid #ccc !important;
+  font-size: 18px !important;
+  background-color: #fff !important;
+  outline: none !important;
+}
+.cmc select.cmc-input {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='58px' height='48px' viewBox='0 0 58 48' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns'%3E%3C!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eicon-dropdown-arrow%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage'%3E%3Cg id='icon-dropdown-arrow' sketch:type='MSArtboardGroup' fill='%23481335'%3E%3Cpath d='M29 30 L40 21.4614543 L38.7950362 20 L29.0163316 27.6158921 L19.2049638 20 L18 21.4614543 L29 30 L29 30 Z' id='Shape' sketch:type='MSShapeGroup'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  appearance: none !important;
+  cursor: pointer !important;
+}
+.cmc .cmc-radio {
+  user-select: none;
+}
+.cmc .cmc-btn {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 25px !important;
+  height: 40px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  background: #5B73B6 !important;
+  color: #fff !important;
+  outline: none !important;
+  user-select: none !important;
+  transition: 0.3s !important;
+  cursor: pointer !important;
+}
+.cmc .cmc-btn:hover {
+  text-decoration: none !important;
+  background: #384D8E !important;
+  color: #fff !important;
+}
+.cmc .cmc-helper {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #BDC2C5;
+  cursor: pointer;
+}
+.cmc .cmc-helper:after {
+  content: "?";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.cmc .cmc-headline {
+  margin-bottom: 40px;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+}
+.cmc .cmc-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 700px;
+}
+.cmc .cmc-field__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.cmc .cmc-field__label .cmc-helper {
+  margin-left: auto;
+}
+.cmc .cmc-field__inputs {
+  position: relative;
+}
+.cmc .cmc-field__unit {
+  position: absolute;
+  bottom: 17px;
+  right: 18px;
+  font-size: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+.cmc .cmc-field + .cmc-field {
+  margin-top: 25px;
+}
+.cmc .cmc-radiobox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cmc .cmc-radiobox .cmc-radio {
+  margin-right: 20px;
+}
+.cmc .cmc-results {
+  padding-top: 30px;
+}
+.cmc .cmc-mainresult {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+.cmc .cmc-mainresult__label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.cmc .cmc-mainresult__value {
+  font-size: 16px;
+}
+.cmc .cmc-mainresult__value > span {
+  font-size: 44px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.cmc .cmc-result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.cmc .cmc-result__label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.cmc .cmc-result__value {
+  font-size: 16px;
+}
+.cmc .cmc-btn-wrap {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.cmc .cmc-bottom-desc {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ui-tooltip {
+  padding: 10px 15px 15px !important;
+  max-width: 350px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-family: Arial, sans-serif;
+  font-size: 12px !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  text-align: left !important;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/*# sourceMappingURL=app.css.map */

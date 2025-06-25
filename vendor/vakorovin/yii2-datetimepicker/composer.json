@@ -1,0 +1,29 @@
+{
+	"name": "vakorovin/yii2-datetimpicker",
+	"description": "Yii2 datetimepicker",
+	"keywords": ["yii2", "extension", "yii2 widget", "yii2 datePicker", "yii2 dateTimePicker", "yii2 timePicker"],
+	"homepage": "https://github.com/vakorovin/yii2-datetimepicker",
+	"type": "yii2-extension",
+	"license": "MIT",
+	"version": "1.2.2",
+	"authors": [
+		{
+			"name": "Vladimir Korovin",
+			"email": "rolan1986@gmail.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"vakorovin\\datetimepicker\\": ""
+		}
+	},
+	"extra": {
+		"asset-installer-paths": {
+			"npm-asset-library": "vendor/npm",
+			"bower-asset-library": "vendor/bower"
+		}
+	}
+}
