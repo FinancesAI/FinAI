@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "FinAI - Financial Application for Loan Management",
   "scripts": {
-    "build": "composer install --no-dev --optimize-autoloader",
+    "build": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader",
     "start": "php -S 0.0.0.0:$PORT -t web",
-    "vercel-build": "composer install --no-dev --optimize-autoloader"
+    "vercel-build": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
   },
   "engines": {
     "php": ">=7.4"
