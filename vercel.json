@@ -1,18 +1,15 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.php": {
-      "runtime": "now-php@1.0.0"
+  "builds": [
+    {
+      "src": "public_html/**",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/public_html/index.html"
     }
-  ],
-  "env": {
-    "YII_ENV": "production",
-    "YII_DEBUG": "false"
-  }
+  ]
 }
