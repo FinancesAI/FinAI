@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'app_mail_from' => 'info@finlat.lv',
+	'app_mail_from' => getenv('MAIL_FROM') ?: 'info@finlat.lv',
     'site_name' => 'FINLAT',
     'solrPerson' => '',
 	'solrLoan'   => '',
@@ -11,28 +11,28 @@ return [
 	'maillink2'  => '',
 	'adminEmail' => '',
 
-	'salt'               => '$6$rounds=5000$usasvmesillyatriggforsala$',
-	'base_dir'           => '/var/www/www-root/data/www/broker.finlat.lv',
-	'api_data_log_path'  => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/api.log',
-	'postback_log_path'  => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/postback.log',
-	'analytics_log_path' => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/analystics.log',
+	'salt'               => getenv('SALT') ?: '$6$rounds=5000$usasvmesillyatriggforsala$',
+	'base_dir'           => getenv('BASE_DIR') ?: '/var/www/html',
+	'api_data_log_path'  => getenv('API_LOG_PATH') ?: '/var/www/html/runtime/logs/api.log',
+	'postback_log_path'  => getenv('POSTBACK_LOG_PATH') ?: '/var/www/html/runtime/logs/postback.log',
+	'analytics_log_path' => getenv('ANALYTICS_LOG_PATH') ?: '/var/www/html/runtime/logs/analytics.log',
 
 
-	'welcomesms_log_path' => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/sms.log',
+	'welcomesms_log_path' => getenv('SMS_LOG_PATH') ?: '/var/www/html/runtime/logs/sms.log',
 
-	'unoapi_log_path' => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/uno.log',
+	'unoapi_log_path' => getenv('UNO_LOG_PATH') ?: '/var/www/html/runtime/logs/uno.log',
 	'unoapi_beat'     => '',
 	'unoapi_key'      => '',
 	'unoapi_url'      => '',
 
 	'tfbankapi_log_path' => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/tfbank.log',
 	//live params        
-	'tfbank_username'    => '',
-	'tfbank_password'    => '',
+	'tfbank_username'    => getenv('TFBANK_USERNAME') ?: '',
+	'tfbank_password'    => getenv('TFBANK_PASSWORD') ?: '',
 	'tfbank_url'         => 'https://webservice.tfbank.se:32259/v1/ApplicationOutService.svc?singleWsdl',
     'tfbank_api_debug'    => true,
 
-	'inbankapi_key'      => '',
+	'inbankapi_key'      => getenv('INBANK_API_KEY') ?: '',
 	'inbankapi_url'      => 'https://api.cofi.lv',
 	'inbankapi_log_path' => '/var/www/www-root/data/www/broker.finlat.lv/runtime/logs/inbank.log',
 

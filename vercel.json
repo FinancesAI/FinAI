@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "web/index.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "web/index.php"
+    }
+  ],
+  "env": {
+    "YII_ENV": "production",
+    "YII_DEBUG": "false"
+  },
+  "functions": {
+    "web/index.php": {
+      "maxDuration": 30
+    }
+  }
+}

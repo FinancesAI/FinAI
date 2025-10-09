@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["php", "php74", "composer", "mysql"]
+
+[phases.install]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[phases.build]
+cmds = [
+  "php init-db.php",
+  "php yii migrate --interactive=0"
+]
+
+[start]
+cmd = "php -S 0.0.0.0:$PORT -t web"

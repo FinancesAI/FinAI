@@ -1,0 +1,47 @@
+# Runtime files
+runtime/
+web/assets/
+web/runtime/
+
+# Logs
+*.log
+runtime/logs/
+
+# Cache
+cache/
+runtime/cache/
+
+# Debug files
+runtime/debug/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Sensitive config
+config/db.php
+config/params.php
+
+# Tests
+tests/
+
+# Documentation
+*.md
+RAILWAY_DEPLOY.md
+
+# Railway specific
+railway.json
+nixpacks.toml
+Procfile
+init-db.php

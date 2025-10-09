@@ -100,8 +100,7 @@ class Loan extends \yii\db\ActiveRecord {
 		return [
 //            [['amount', 'term', 'person_id'], 'required'],
 			[
-				[   
-					'id',
+				[
 					'person_id',
 					'user_id',
 					'term',
@@ -122,9 +121,10 @@ class Loan extends \yii\db\ActiveRecord {
                     'acceptance',
                     'true_beneficiary',
                     'politically_significant',
-                  
+                    'company_turnover',
+                    'registration_number',
                     'invoice_amount',
-  					'loan_type',
+
                     'agree'
 				],
 				'integer'
@@ -139,18 +139,18 @@ class Loan extends \yii\db\ActiveRecord {
 					'techpass',
 					'property_address',
 					'type',
-					
+					'company_name',
 					'invoice_due_date',
 					'document',
 					'revenue',
                     'realEstate',
-                 	'car_brand',
-                 	'car_model',
+                 	'company_duration_months',
                     'property_type',
                     'loan_purpose',
                     'car_ad_link',
                     'invoice_due_date',
-                    'year_of_issue',
+                    'car_brand',
+                    'car_model',
                     'owned_transport'
 				],
 				'string'
@@ -194,72 +194,69 @@ class Loan extends \yii\db\ActiveRecord {
 	/**
 	 * @inheritdoc
 	 */
-public function attributeLabels() {
-    return [
-        'id'     => strtoupper(Yii::t('app/loan', 'ID')),
-        'person_email'     => strtoupper(Yii::t('app/loan', 'Person Email')),
-        'person_phone'     => strtoupper(Yii::t('app/loan', 'Person Phone')),
-        'person_personal_code'     => strtoupper(Yii::t('app/loan', 'Person Personal Code')),
-        'person_name'     => strtoupper(Yii::t('app/loan', 'Person Name')),
-        'person_surname'     => strtoupper(Yii::t('app/loan', 'Person Surname')),
-        'person_loan_count'     => strtoupper(Yii::t('app/loan', 'PLC')),
-        'unique_id'             => strtoupper(Yii::t('app/loan', 'Unique ID')),
-        'person_id'             => strtoupper(Yii::t('app/loan', 'Person ID')),
-        'user_id'               => strtoupper(Yii::t('app/loan', 'User')),
-        'amount'                => strtoupper(Yii::t('app/loan', 'Loan amount')),
-        'approved'              => strtoupper(Yii::t('app/loan', 'In progress')),
-        'first_payment'         => strtoupper(Yii::t('app/loan', 'First payment')),
-        'term'                  => strtoupper(Yii::t('app/loan', 'Term')),
-        'status'                => strtoupper(Yii::t('app/loan', 'Status')),
-        'source'                => strtoupper(Yii::t('app/loan', 'Source')),
-        'product'               => strtoupper(Yii::t('app/loan', 'Product')),
-        'deal_stage'            => strtoupper(Yii::t('app/loan', 'Deal Stage')),
-        'deal_product'          => strtoupper(Yii::t('app/loan', 'Deal product')),
-        'referral'              => strtoupper(Yii::t('app/loan', 'Referral')),
-        'query_string'          => strtoupper(Yii::t('app/loan', 'Query String')),
-        'ip_ountry'             => strtoupper(Yii::t('app/loan', 'Ip Ountry')),
-        'description'           => strtoupper(Yii::t('app/loan', 'Description')),
-        'create_time'           => strtoupper(Yii::t('app/loan', 'Create date')),
-        'update_time'           => strtoupper(Yii::t('app/loan', 'Update date')),
-        'close_time'            => strtoupper(Yii::t('app/loan', 'Close date')),
-        'person_credit_history' => strtoupper(Yii::t('app/loan', 'Inbank status')),
-        'reminder_time'         => strtoupper(Yii::t('app/loan', 'Reminder date')),
-        'waiting_time'          => strtoupper(Yii::t('app/loan', 'Waiting Time')),
-        'actions'               => strtoupper(Yii::t('app/loan', 'Actions')),
-        'lang'                  => strtoupper(Yii::t('app/loan', 'Language')),
-        'prog'                  => strtoupper(Yii::t('app/loan', 'Progress')),
-        'description_2'         => strtoupper(Yii::t('app/loan', 'Description 2')),
-        'last_changed_field'    => strtoupper(Yii::t('app/loan', 'Last changed field')),
-        'rating'                => strtoupper(Yii::t('app/loan', 'Rating')),
-        'company_name'          => strtoupper(Yii::t('app/loan', 'Company Name')),
-        'year'                  => strtoupper(Yii::t('app/loan', 'Year')),
-        'autoregnr'             => strtoupper(Yii::t('app/loan', 'Autoregnr')),
-        'techpass'              => strtoupper(Yii::t('app/loan', 'Techpass')),
-        'pledge'                => strtoupper(Yii::t('app/loan', 'pledge')),
-        'property_address'      => strtoupper(Yii::t('app/loan', 'property_address')),
-        'price'                 => strtoupper(Yii::t('app/loan', 'price')),
-        'amount_taken'          => strtoupper(Yii::t('app/loan', 'amount_taken')),
-        'realEstate'            => strtoupper(Yii::t('app/loan', 'Real Estate')),
-        'revenue'               => strtoupper(Yii::t('app/loan', 'Revenue')),
-      
-        'acceptance'            => strtoupper(Yii::t('app/loan', 'Accepted loans')),
-        'loan_purpose'          => strtoupper(Yii::t('app/loan', 'Loan Purpose')),
-        'property_type'         => strtoupper(Yii::t('app/loan', 'Property Type')),
-        'owned_transport'       => strtoupper(Yii::t('app/loan', 'What kind of transport do you own?')),
-        'car_ad_link' => strtoupper(Yii::t('app/loan','Link to car advertisement')),
-        'total_credit_balance'  => strtoupper(Yii::t('app/loan', 'Total credit balance')),
-        'additional_credit_amount' => strtoupper(Yii::t('app/loan', 'Additional credit amount')),
-       'company_duration_months'=> strtoupper(Yii::t('app/loan', 'Company Operating Duration')),
-        
-        'step_monthly_payment'  => strtoupper(Yii::t('app/loan', 'Step Monthly Payment')),
-        'invoice_amount'        => strtoupper(Yii::t('app/loan', 'Invoice Amount')),
-        'invoice_due_date'      => strtoupper(Yii::t('app/loan', 'Invoice due date')),
-           'car_model'      => strtoupper(Yii::t('app/loan', 'Car model')),
-              'car_brand'      => strtoupper(Yii::t('app/loan', 'Car brand')),
-        
-        'year_of_issue'      => strtoupper(Yii::t('app/loan', 'Year of issue')),
-    ];
-}
+	public function attributeLabels() {
+		return [
+            'person_email'     => Yii::t( 'app/loan', 'Person Email' ),
+            'person_phone'     => Yii::t( 'app/loan', 'Person Phone' ),
+            'person_personal_code'     => Yii::t( 'app/loan', 'Person Personal Code' ),
+            'person_name'     => Yii::t( 'app/loan', 'Person Name' ),
+            'person_surname'     => Yii::t( 'app/loan', 'Person Surname' ),
+			'person_loan_count'     => Yii::t( 'app/loan', 'PLC' ),
+			'id'                    => Yii::t( 'app/loan', 'ID' ),
+			'unique_id'             => Yii::t( 'app/loan', 'Unique ID' ),
+			'person_id'             => Yii::t( 'app/loan', 'Person ID' ),
+			'user_id'               => Yii::t( 'app/loan', 'User' ),
+			'amount'                => Yii::t( 'app/loan', 'Loan amount' ),
+			'approved'              => Yii::t( 'app/loan', 'In progress' ),
+			'first_payment'         => Yii::t( 'app/loan', 'First payment' ),
+			'term'                  => Yii::t( 'app/loan', 'Term' ),
+			'status'                => Yii::t( 'app/loan', 'Status' ),
+			'source'                => Yii::t( 'app/loan', 'Source' ),
+			'product'               => Yii::t( 'app/loan', 'Product' ),
+			'deal_stage'            => Yii::t( 'app/loan', 'Deal Stage' ),
+			'deal_product'          => Yii::t( 'app/loan', 'Deal product' ),
+			'referral'              => Yii::t( 'app/loan', 'Referral' ),
+			'query_string'          => Yii::t( 'app/loan', 'Query String' ),
+			'ip_ountry'             => Yii::t( 'app/loan', 'Ip Ountry' ),
+			'description'           => Yii::t( 'app/loan', 'Description' ),
+			'create_time'           => Yii::t( 'app/loan', 'Create date' ),
+			'update_time'           => Yii::t( 'app/loan', 'Update date' ),
+			'close_time'            => Yii::t( 'app/loan', 'Close date' ),
+			'person_credit_history' => Yii::t( 'app/loan', 'Inbank status' ),
+			'reminder_time'         => Yii::t( 'app/loan', 'Reminder date' ),
+			'waiting_time'          => Yii::t( 'app/loan', 'Waiting Time' ),
+			'actions'               => Yii::t( 'app/loan', 'Actions' ),
+			'lang'                  => Yii::t( 'app/loan', 'Language' ),
+			'prog'                  => Yii::t( 'app/loan', 'Progress' ),
+			'description_2'         => Yii::t( 'app/loan', 'Description 2' ),
+			'last_changed_field'    => Yii::t( 'app/loan', 'Last changed field' ),
+			'rating'                => Yii::t( 'app/loan', 'Rating' ),
+			'company_name'          => Yii::t( 'app/loan', 'Company Name' ),
+			'year'                  => Yii::t( 'app/loan', 'Year' ),
+			'autoregnr'             => Yii::t( 'app/loan', 'Autoregnr' ),
+			'techpass'              => Yii::t( 'app/loan', 'Techpass' ),
+			'pledge'                => Yii::t( 'app/loan', 'pledge' ),
+			'property_address'      => Yii::t( 'app/loan', 'property_address' ),
+			'price'                 => Yii::t( 'app/loan', 'price' ),
+			'amount_taken'          => Yii::t( 'app/loan', 'amount_taken' ),
+            'realEstate'            => Yii::t( 'app/loan', 'Real Estate' ),
+            'revenue'            => Yii::t( 'app/loan', 'Revenue' ),
+            'company_length_of_service'            => Yii::t( 'app/loan', 'Company in operation' ),
+            'acceptance'            => Yii::t( 'app/loan', 'Accepted loans' ),
+		  	'loan_purpose'            => Yii::t('app/loan', 'Loan Purpose'),
+            'property_type'           => Yii::t('app/loan', 'Property Type'),
+			'owned_transport' =>Yii::t('app/loan', 'What kind of transport do you own?'),
+			'car_ad_link' =>Yii::t('app/loan', 'Link'),
+			'total_credit_balance'=>Yii::t('app/loan', 'Total credit balance'),
+			'additional_credit_amount'=>Yii::t('app/loan', 'Additional credit amount'),
+			'company_turnover'=>yii::t('app/loan', 'Company Turnover'),
+            'company_duration_months'=>yii::t('app/loan', 'Company Work Month'),
+            'step_monthly_payment'=>yii::t('app/loan', 'Step Monthly Payment'),
+            'invoice_amount'=>yii::t('app/loan', 'Invoice Amount'),
+             'invoice_due_date'=>yii::t('app/loan', 'Invoice due date'),
+            'registration_number'=>yii::t('app/loan', 'Registration Number')
+		];
+	}
 
 
 	public function getWaitingClassBankLoans() {
@@ -1478,8 +1475,7 @@ public function attributeLabels() {
         $serializedData = str_replace(['&#091;', '&#093;'], ['[', ']'], $serializedData);
 
         // $serializedData = preg_replace('/[^\x20-\x7E]/', '', $serializedData);
-        // $serializedData = preg_replace('/[^\x20-\x7E\x{0400}-\x{04FF}]/u', '', $serializedData);
-        $serializedData = preg_replace('/[^\x20-\x7E\x{0400}-\x{04FF}\x{0100}-\x{017F}\x{1E00}-\x{1EFF}\x{2C60}-\x{2C7F}]/u', '', $serializedData);
+        $serializedData = preg_replace('/[^\x20-\x7E\x{0400}-\x{04FF}]/u', '', $serializedData);
 
         $fixedSerializedData = preg_replace_callback('/s:(\d+):"(.*?)";/s', function ($matches) {
             $actualLength = strlen($matches[2]);
@@ -1509,9 +1505,6 @@ public function attributeLabels() {
         $tmt_data = $formData['tmt_data'] ?? '';
         $loanPurpose = htmlspecialchars($loan['cel_kredita'] ?? '', ENT_QUOTES, 'UTF-8');
     	$maritalStatus = htmlspecialchars($loan['polojenie'] ?? '', ENT_QUOTES, 'UTF-8');
-    	 $form_post_id = $formData['form_post_id'] ?? null;
-
-    $loanType = in_array($form_post_id, [2655, 2656, 2657]) ? 1 : 0;
  	$ret = [
 		    "Loan" => [
 		        "amount" => (double) ($loan['step_quantity'] ?? ''),
@@ -1533,11 +1526,13 @@ public function attributeLabels() {
 		        "insurance_type" => isset($loan['tip']) && is_array($loan['tip']) && isset($loan['tip'][0]) ? $loan['tip'][0] : '',
 		        "car_brand" => $loan['marka_avto'] ?? '',
 		        "car_model" => $loan['model_avto'] ?? '',
+		  		 "company_name" => $loan["company_name"] ?? '',
 		        "deposit" => $loan['deposit'] ?? '',
 		        "invoice_amount" => $loan['jel_sum_fak'] ?? '',    
 				"invoice_due_date" => $loan['jel_srok_fak'] ?? '', 
 		        "revenue" => isset($loan['gada']) && is_array($loan['gada']) && isset($loan['gada'][0]) ? $loan['gada'][0] : '',
-		     
+		        "company_turnover" => $loan['company_turnover'] ?? '',
+		     "company_duration_months" =>$loan['company_work_months'] ?? '',
 		        "amount_taken" => (double) ($loan['step_quantity'] ?? ''),
 		       'company_length_of_service' => isset($loan['darbojas']) && is_array($loan['darbojas']) && isset($loan['darbojas'][0]) ? (int) $loan['darbojas'][0] : null,
 		        'document' => $loan['doc'] ?? '',
@@ -1551,9 +1546,7 @@ public function attributeLabels() {
 		        'credit_history' => $loan['credit_history'] ?? 0,
 		             'marital_status' => $loan['polojenie'] ?? '',
 		             'owned_transport'=>$loan['tranport']??'',
-		              'year_of_issue' => $loan['godvipuska'] ?? '',
-		             
-		              "loan_type" => $loanType,
+		             'registration_number'=>$loan['registration_number']??'',
 		    ],
 		    "Person" => [
 		        "name" => $loan["imya"] ?? '',
@@ -1579,14 +1572,8 @@ public function attributeLabels() {
 		            (($loan['gorod'] ?? '') ? ' ' . $loan['gorod'] : '') . 
 		            (($loan['adre_nedv'] ?? '') ? ' ' . $loan['adre_nedv'] : ''),
 		        "credit_history" => 0,
-		         "company_name" => $loan["company_name"] ?? '',
-		         "company_duration_months" => $loan["company_work_months"] ?? '',
-		         'registration_number'=>$loan['registration_number']??'',
- 				'company_turnover'=>$loan['company_turnover']??'',
- 				'dependants'=>$loan['ijdiv']??'',
-		        // "dependants" => (int) ($loan['ijdiv'] ?? ''),
+		        "dependants" => (int) ($loan['ijdiv'] ?? ''),
 		        'subscribe' => $loan['predlozenie'] ?? '',
-
 		        'courier' => $loan['kurjer'] ?? ''
 		    ],
 		    "id" => $formData['form_id'] ?? '',

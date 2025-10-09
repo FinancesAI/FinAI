@@ -6,8 +6,8 @@ $params = require( __DIR__ . '/params.php' );
 
 $config = [
 	'id'         => 'basic',
-	'name'         => 'broker.finlat.lv',
-	'timezone'   => 'Europe/Riga',
+	'name'         => getenv('APP_URL') ?: 'broker.finlat.lv',
+	'timezone'   => getenv('TIMEZONE') ?: 'Europe/Moscow',
 	'basePath'   => dirname( __DIR__ ),
 	'bootstrap'  => [ 'log', 'GlobalClass', 'queue' ],
     'aliases' => [
@@ -46,7 +46,7 @@ $config = [
 
 		'request'      => [
 			// !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-			'cookieValidationKey' => '3vCBlVte0URuWzbtiEunJ7r0_VISNYOM',
+			'cookieValidationKey' => getenv('COOKIE_VALIDATION_KEY') ?: 'CHANGE_THIS_SECRET_KEY_IN_PRODUCTION',
 			'parsers' => [
 				'application/json' => 'yii\web\JsonParser',
 			]
@@ -133,7 +133,7 @@ $config = [
 				'*' => [
 					'class'          => 'yii\i18n\PhpMessageSource',
 					'basePath'       => '@app/messages', // if advanced application, set @frontend/messages
-					'sourceLanguage' => 'en',
+					'sourceLanguage' => 'ru', // Изменено с 'en' на 'ru'
                     'forceTranslation' => true,
 					'fileMap'        => [
 					],
@@ -169,14 +169,13 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
-        'allowedIPs' => ['*'],
+        'allowedIPs' => ['127.0.0.1', '::1'], // Только локальные IP
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        'allowedIPs' => ['*'],
-//        'allowedIPs' => ['85.193.214.41'],
+        'allowedIPs' => ['127.0.0.1', '::1'], // Только локальные IP
         'generators' => [
             'job' => [
                 'class' => \yii\queue\gii\Generator::class,
