@@ -1,20 +1,18 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "web/index.php",
-      "use": "@vercel/php"
+  "functions": {
+    "api/index.php": {
+      "runtime": "php@8.2"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "web/index.php"
+      "dest": "/api/index.php"
     }
   ],
   "env": {
     "YII_ENV": "production",
     "YII_DEBUG": "false"
-  },
-  "buildCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
+  }
 }
