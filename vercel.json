@@ -16,10 +16,5 @@
     "YII_ENV": "production",
     "YII_DEBUG": "false"
   },
-  "functions": {
-    "web/index.php": {
-      "maxDuration": 30
-    }
-  },
   "buildCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
 }
