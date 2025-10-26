@@ -154,4 +154,29 @@ return [
     ],
 
     'onlineThreshold' => 600, // 10 minutes
+    'calc.currencySign' => '₽',
+    'calc.currencyCode' => 'RUB',
+    'calc.maxCreditConfig' => [
+        'term' => 20,
+        'calcMonthlyPayment' => 160,
+        'fixedHouseholdCosts' => 560,
+        'guarantorCosts' => 405,
+        'householdMemberCosts' => 225,
+        'pl_buffer' => [
+            'pl_buffer_parameter' => 3,
+            'pl_existing_coef' => 1.37,
+            'pl_liabilities' => 20000,
+            'pl_off' => 0,
+        ],
+        'dsti_calculation' => [
+            'dsti_parameter' => 50,
+            'dsti_interest' => 6,
+            'dsti_coefficient' => 1.49,
+            'dsti_liabilities' => 20000,
+            'dsti_off' => 0,
+        ],
+        'periodForMaxLti' => 72,
+        'pl_buffer_parameter' => 3,
+        'max_month_credit_percentage' => 40,
+    ],
 ];

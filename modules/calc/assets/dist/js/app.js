@@ -1,6 +1,13 @@
 if (jQuery('#calc-max-credit').length) jQuery('#calc-max-credit').tooltip();
 
 (function(){
+  const calcConfig = window.calcMaxCreditConfig || {};
+
+  function getConfigNumber(value, fallback) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : fallback;
+  }
+
   function numberFormat(e,t,a,r){var s,l;return isNaN(t=Math.abs(t))&&(t=2),null==a&&(a=","),null==r&&(r="."),(l=(s=parseInt(e=(+e||0).toFixed(t))+"").length)>3?l%=3:l=0,(l?s.substr(0,l)+r:"")+s.substr(l).replace(/(\d{3})(?=\d)/g,"$1"+r)+(t?a+Math.abs(e-s).toFixed(t).replace(/-/,0).slice(2):"")}
 
   function init() {
@@ -40,27 +47,27 @@ if (jQuery('#calc-max-credit').length) jQuery('#calc-max-credit').tooltip();
     const totalLiabilities = 0;
     const dependants = 0;
 
-    const term = 20;
-    const calcMonthlyPayment = 160;
-    const fixedHouseholdCosts = 560;
-    const guarantorCosts = 405;
-    const householdMemberCosts = 225;
-    const pl_buffer = {
+    const term = getConfigNumber(calcConfig.term, 20);
+    const calcMonthlyPayment = getConfigNumber(calcConfig.calcMonthlyPayment, 160);
+    const fixedHouseholdCosts = getConfigNumber(calcConfig.fixedHouseholdCosts, 560);
+    const guarantorCosts = getConfigNumber(calcConfig.guarantorCosts, 405);
+    const householdMemberCosts = getConfigNumber(calcConfig.householdMemberCosts, 225);
+    const pl_buffer = Object.assign({
       pl_buffer_parameter: 3,
       pl_existing_coef: 1.37,
       pl_liabilities: 20000,
       pl_off: 0,
-    };
-    const dsti_calculation = {
+    }, calcConfig.pl_buffer || {});
+    const dsti_calculation = Object.assign({
       dsti_parameter: 50,
       dsti_interest: 6,
       dsti_coefficient: 1.49,
       dsti_liabilities: 20000,
       dsti_off: 0,
-    };
-    const periodForMaxLti = 72;
-    const pl_buffer_parameter = 3;
-    const max_month_credit_percentage = 40;
+    }, calcConfig.dsti_calculation || {});
+    const periodForMaxLti = getConfigNumber(calcConfig.periodForMaxLti, 72);
+    const pl_buffer_parameter = getConfigNumber(calcConfig.pl_buffer_parameter, 3);
+    const max_month_credit_percentage = getConfigNumber(calcConfig.max_month_credit_percentage, 40);
 
     const maxMonthlyPercentage = max_month_credit_percentage/100;
     const interest = rate/100;

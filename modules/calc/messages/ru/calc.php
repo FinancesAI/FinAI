@@ -2,5 +2,20 @@
 
 return [
     'Title' => 'Калькуляторы',
-    'bottom_desc' => 'Rezultātam ir informatīva nozīme un tas ir balstīts uz aptuvenu aprēķinu.<br><br>Ieķīlātam īpašumam jābūt apdrošinātam. Notāra pakalpojumi, īpašuma vērtēšana un apdrošināšanas maksājumi bankai nav zināmi, tāpēc tie nav iekļauti gada procentu likmē. Aizdevuma līgumā noteikto saistību izpilde tiks nodrošināta ar nekustamā īpašuma ķīlu. Rezultātu kalkulatoru nodrošina Finanšu pakalpojumu salīdzināšanas platforma www.finlat.lv.',
+    'platform_title' => 'ПЛАТФОРМА ФИНАНСОВОГО<br>СРАВНЕНИЯ',
+    'calc_title' => 'Какую сумму вы можете занять?',
+    'loan_for_label' => 'Кредит предназначен',
+    'loan_for_single' => 'Только мне',
+    'loan_for_couple' => 'Мне и созаемщику',
+    'rate_label' => 'Процентная ставка',
+    'income_label_single' => 'Ежемесячный доход после уплаты налогов',
+    'income_label_couple' => 'Совокупный ежемесячный доход семьи после уплаты налогов',
+    'income_hint' => 'Ежемесячная зарплата или другие доходы, включая пенсию, социальные выплаты, субсидии и доход от имущества. Если вы подаёте заявку с созаемщиком, укажите общий доход.',
+    'liabilities_label_single' => 'Ежемесячные платежи по действующим кредитам',
+    'liabilities_label_couple' => 'Совокупные ежемесячные платежи семьи по действующим кредитам',
+    'liabilities_hint' => 'Ежемесячные платежи по кредитным обязательствам, включая ипотеку, лизинг, потребительские кредиты и другие займы.',
+    'max_credit_label' => 'Ваша максимальная сумма кредита:',
+    'max_monthly_payment_label' => 'Максимальный ежемесячный платёж:',
+    'apply_button' => 'Оставить заявку',
+    'bottom_desc' => 'Результат носит информационный характер и основан на ориентировочных расчётах.<br><br>Залоговая недвижимость должна быть застрахована. Услуги нотариуса, оценка недвижимости и страховые платежи в пользу банка не учитываются, поэтому они не включены в годовую процентную ставку. Исполнение обязательств по кредитному договору обеспечивается залогом недвижимого имущества. Калькулятор предоставлен платформой сравнения финансовых услуг www.finlat.lv.',
 ];
